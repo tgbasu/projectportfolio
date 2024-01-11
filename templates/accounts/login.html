@@ -1,0 +1,45 @@
+<!-- Login page content -->
+<style>
+    /* Apply the current page's theme/color */
+    body {
+        background-color: #ed1c24; /* PANTONE® Red 032 C */
+        color: #fff; /* Text color */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .login-section {
+        text-align: center;
+        margin-top: 100px; /* Adjust to center the form vertically */
+    }
+    .login-section h1 {
+        margin-bottom: 20px;
+    }
+    /* Style the form inputs */
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="submit"] {
+        width: 300px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+    }
+    form input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+    form input[type="submit"]:hover {
+        background-color: #444;
+    }
+</style>
+<div class="login-section">
+    <h1>Login Page</h1>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Email" class="input-field"><br>
+        <input type="password" name="password" placeholder="Password" class="input-field"><br>
+        <input type="submit" value="Login">
+    </form>
+</div>
